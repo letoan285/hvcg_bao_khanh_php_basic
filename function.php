@@ -15,6 +15,7 @@ function getName(){
         echo $x;
     }
 }
+// $xx = 90;
 
 // 1. function co return,
 // 2. function ko co return
