@@ -35,3 +35,9 @@ function getName(){
 
 $num = getName();
 var_dump($num);
+
+// PHP Basic
+
+// MYSQL--, PosgreshQl, MS Servr, Oracle ()->MongoDB, Non-SQL
+
+// PHP Nang cao.
