@@ -85,3 +85,36 @@ delete from products where id = 2;
   select max(price) as 'Max Price' from products;
 
   select *, 2*3 as stock_value from products;
+
+  select *, price*stock as 'Total In Stock' from products;
+  -- Max, min, cac ham, distinct
+
+   select * from products group by supplier_id order by supplier_id desc; -- default should be asc
+
+   select * from products where category_id = 1;
+
+   select products.id as product_id, products.name as product_name, products.price, categories.id as category_id, categories.name as category_name from products join categories on products.category_id = categories.id where categories.id = 1;
+
+   select p.id as product_id, p.name as product_name, p.price, c.id as category_id, c.name as category_name 
+    from products as p join categories as c on p.category_id = c.id
+    where c.id = 1;
+   
+   select p.id as product_id, p.name as product_name, p.price, c.id as category_id, c.name as category_name 
+   from products as p left join categories as c on p.category_id = c.id 
+   where c.id = 1;
+
+   select p.id as product_id, p.name as product_name, p.price, c.id as category_id, c.name as category_name 
+   from products p left join categories c on p.category_id = c.id 
+   where c.id = 1;
+
+   --- lay tat ca san pham thuoc ve nuoc my (country_id)
+   country_id ==1;
+   select products.* from products left join suppliers on products.supplier_id = suppliers.id 
+   left join countries on suppliers.country_id = countries.id where countries.id = 1;
+
+    select p.*, s.name as supplier_name, c.name as country_name
+    from products as p left join suppliers as s on p.supplier_id = s.id 
+   left join countries as c on s.country_id = c.id where c.id = 1;
+   -- 20 bang
+
+   
